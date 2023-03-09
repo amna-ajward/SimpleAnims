@@ -1,0 +1,6 @@
+{
+	"script": {
+		"css": "node-sass --include-path scss projects public/dist",
+		"watch": "nodemon -e scss -x 'npm run css'"
+	}
+}
