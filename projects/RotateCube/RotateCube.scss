@@ -1,0 +1,110 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+$size:8rem;
+$translate-size:calc($size/2);
+$bg-color:rgb(37, 30, 104);
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $bg-color;
+}
+
+.cube {
+  position: relative;
+  width: $size;
+  height: $size;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transform-style: preserve-3d;
+  transform-origin: center center calc(-1 * $translate-size);
+
+  &:hover {
+    animation-name: rotatecube;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+  }
+}
+
+.face {
+  --bgcolor: 180deg;
+  width: $size;
+  height: $size;
+  position: absolute;
+  border: 10px solid $bg-color;
+
+  background: #C6FFDD;
+  background: -webkit-linear-gradient(to right, #f7797d, #FBD786, #C6FFDD);
+  background: linear-gradient(to right, #f7797d, #FBD786, #C6FFDD);
+}
+
+.front {
+  background: #f12711;
+  background: -webkit-linear-gradient(to center, #f5af19, #f12711);
+  background: linear-gradient(to right, #f5af19, #f12711);
+}
+
+.right {
+  transform-origin: right;
+  rotate: y -90deg;
+
+  background: #2980B9;
+  background: -webkit-linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9);
+  background: linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9);
+}
+
+.left {
+  transform-origin: left;
+  rotate: y 90deg;
+
+  background: #a8ff78;
+  background: -webkit-linear-gradient(to right, #78ffd6, #a8ff78);
+  background: linear-gradient(to right, #78ffd6, #a8ff78);
+}
+
+.up {
+  transform-origin: top;
+  rotate: x -90deg;
+
+  background: #f7ff00;
+  background: -webkit-linear-gradient(to right, #db36a4, #f7ff00);
+  background: linear-gradient(to right, #db36a4, #f7ff00);
+}
+
+.down {
+  transform-origin: bottom;
+  rotate: x 90deg;
+
+  background: #FDFC47;
+  background: -webkit-linear-gradient(to right, #24FE41, #FDFC47);
+  background: linear-gradient(to right, #24FE41, #FDFC47);
+}
+
+.back {
+  translate: 0 0 (-$size);
+
+  background: #5433FF;
+  background: -webkit-linear-gradient(to right, #A5FECB, #20BDFF, #5433FF);
+  background: linear-gradient(to right, #A5FECB, #20BDFF, #5433FF);
+}
+
+@keyframes rotatecube {
+  0% {
+    rotate: 1 1 1 0deg
+  }
+
+  100% {
+    rotate: 1 1 1 360deg
+  }
+}

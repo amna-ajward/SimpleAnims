@@ -1,6 +1,27 @@
 {
-	"script": {
-		"css": "node-sass --include-path scss projects public/dist",
-		"watch": "nodemon -e scss -x 'npm run css'"
+	"name": "simpleanims",
+	"version": "1.0.0",
+	"description": "Collection of UI UX Projects",
+	"main": "index.html",
+	"scripts": {
+		"sass": "node-sass -w projects/ -o public/dist --recursive"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/amna-ajward/SimpleAnims.git"
+	},
+	"keywords": [
+		"design",
+		"replica",
+		"simpleanimations"
+	],
+	"author": "Amna Ajward",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/amna-ajward/SimpleAnims/issues"
+	},
+	"homepage": "https://github.com/amna-ajward/SimpleAnims#readme",
+	"dependencies": {
+		"node-sass": "^8.0.0"
 	}
 }
